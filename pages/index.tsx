@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import { useWeb3 } from '@3rdweb/hooks'
 import { useEffect } from 'react'
 import {client} from '../lib/sanityClient'
-import toast, {Toaster} from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 const style = {
     wrapper: ``,
@@ -16,7 +16,7 @@ const style = {
 export default function Home() {
     const {address, connectWallet } = useWeb3()
 
-    const welcomeUser = (userName: string, toastHandler = toast) => {
+    const welcomeUser = (userName: String, toastHandler = toast) => {
         toastHandler.success(
             `Welcome Back ${userName !== 'Unnamed' ? `${userName}` : ''}!`,
             {

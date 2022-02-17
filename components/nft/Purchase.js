@@ -44,9 +44,14 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule}) => {
         quantityDesired = 1,
         module = marketPlaceModule,
     ) => {
-        await module.buyoutDirectListing({listingId, quantityDesired})
+        try{
+            await module.buyoutDirectListing({listingId, quantityDesired})
+            confirmPurchase()
+        } catch {
+            //Throw Insufficient funds error
+        }
 
-        confirmPurchase()
+        
     }
     return (
         <div className='flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12'>

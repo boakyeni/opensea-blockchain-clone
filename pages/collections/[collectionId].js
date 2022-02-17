@@ -82,7 +82,8 @@ const Collection = () => {
             setListings([])
         }
     }, [marketPlaceModule])
-
+    
+    //grabbing data from database
     const fetchCollectionData = async (sanityClient = client) => {
         const query = `*[_type == "marketItems" && contractAddress == "${collectionId}" ] {
         "imageUrl": profileImage.asset->url,
